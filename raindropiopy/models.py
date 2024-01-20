@@ -13,6 +13,7 @@ from datetime import datetime
 from pathlib import Path
 from typing import Any
 
+import requests
 from pydantic import (
     BaseModel,
     EmailStr,
@@ -630,6 +631,7 @@ class Raindrop(BaseModel):
     created: datetime | None
     domain: str | None
     excerpt: str | None  # aka 'Description' on the Raindrop UI.
+    file: File | None
     last_update: datetime | None = Field(None, alias="lastUpdate")
     link: HttpUrl | None
     media: list[dict[str, Any]] | None
@@ -641,7 +643,6 @@ class Raindrop(BaseModel):
     # "Other" fields:
     broken: bool | None
     cache: Cache | None
-    file: File | None
     important: bool | None  # aka marked as Favorite.
 
     # Per API Doc: "Our API response could contain other fields, not described above.
@@ -658,6 +659,14 @@ class Raindrop(BaseModel):
         """Return a Raindrop bookmark based on it's id."""
         item = api.get(URL.format(path=f"{id}")).json()["item"]
         return cls(**item)
+
+    @classmethod
+    def cache(cls, api: T_API, id: int) -> requests.Response:
+        """Return the requests on behalf of a permanent copy of the specified Raindrop."""
+        # Note: In testing in 2024-01, while I was able to get a URL back in this response
+        # (after a 307 redirect), the URL did NOT work against S3...(essentially an "item not
+        # found" from the S3 infrastructure).
+        return api.get(URL.format(path=f"raindrop/{id}/cache"))
 
     @classmethod
     def create_link(

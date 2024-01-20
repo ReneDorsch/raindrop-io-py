@@ -145,14 +145,6 @@ with API(os.environ["RAINDROP_TOKEN"]) as api:
 
 (after this has executed, go to your Raindrop.io environment (site or app) and you should see this collection available)
 
-## Command-Line Interface Usage
-
-```shell
-[.venv] % raindropiopy
-```
-
-Note: remember to setup `RAINDROP-TOKEN` in your environment!
-
 ## Documentation
 
 We use [Sphinx](https://www.sphinx-doc.org/en/master/index.html) with [Google-style docstrings](https://www.sphinx-doc.org/en/master/usage/extensions/example_google.html) to document our API. Documentation is hosted by [ReadTheDocs](https://readthedocs.org/) and can be found [here](https://raindrop-io-py.readthedocs.io/en/latest/).
@@ -168,6 +160,8 @@ The project is licensed under the MIT License.
 ## Release History
 
 ### Unreleased
+
+- INTERNAL: In an attempt create a full (ie. file-based) exporter, added a "cache" call to the Raindrop class to return a URL to the cached/permanent pdf/file documents on S3. While the call ostensibly works, the returned URL's don't work against S3 ("item not found"). Thus, use AT YOUR OWN RISK (and let me know if you *do* get a successful use of it! ;-)
 
 ### 0.2.2 - 2024-01-18
 
