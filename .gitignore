@@ -1,4 +1,5 @@
 # Local additions
+.DS_STORE
 poetry.toml
 
 # Byte-compiled / optimized / DLL files

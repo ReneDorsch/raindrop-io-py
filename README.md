@@ -92,13 +92,13 @@ load_dotenv()
 
 with API(os.environ["RAINDROP_TOKEN"]) as api:
 
-    print("Current Collections:"
-    for collection in Collection.get_collections(api):
-        print(collection.title)
+	print("Current Collections:"
+	for collection in Collection.get_collections(api):
+		print(collection.title)
 
-    print("\nUnsorted Raindrop Bookmarks:"
-    for item in Raindrop.search(api, collection=CollectionRef.Unsorted):
-        print(item.title)
+	print("\nUnsorted Raindrop Bookmarks:"
+	for item in Raindrop.search(api, collection=CollectionRef.Unsorted):
+		print(item.title)
 ```
 
 #### Create a New Raindrop Bookmark to a URL
@@ -113,10 +113,10 @@ from raindropiopy import API, Raindrop
 load_dotenv()
 
 with API(os.environ["RAINDROP_TOKEN"]) as api:
-    link, title = "https://www.python.org/", "Our Benevolent Dictator's Creation"
-    print(f"Creating Raindrop to: '{link}' with title: '{title}'...", flush=True, end="")
-    raindrop = Raindrop.create_link(api, link=link, title=title, tags=["abc", "def"])
-    print(f"Done, id={raindrop.id}")
+	link, title = "https://www.python.org/", "Our Benevolent Dictator's Creation"
+	print(f"Creating Raindrop to: '{link}' with title: '{title}'...", flush=True, end="")
+	raindrop = Raindrop.create_link(api, link=link, title=title, tags=["abc", "def"])
+	print(f"Done, id={raindrop.id}")
 
 ```
 
@@ -137,10 +137,10 @@ from raindropiopy import API, Collection
 load_dotenv()
 
 with API(os.environ["RAINDROP_TOKEN"]) as api:
-    title = f"TEST Collection ({getuser()}@{datetime.now():%Y-%m-%dT%H:%M:%S})"
-    print(f"Creating collection: '{title}'...", flush=True, end="")
-    collection = Collection.create(api, title=title)
-    print(f"Done, {collection.id=}.")
+	title = f"TEST Collection ({getuser()}@{datetime.now():%Y-%m-%dT%H:%M:%S})"
+	print(f"Creating collection: '{title}'...", flush=True, end="")
+	collection = Collection.create(api, title=title)
+	print(f"Done, {collection.id=}.")
 ```
 
 (after this has executed, go to your Raindrop.io environment (site or app) and you should see this collection available)
@@ -161,7 +161,11 @@ The project is licensed under the MIT License.
 
 ### Unreleased
 
+### 0.2.5 - 2024-04-12
+
 - INTERNAL: In an attempt create a full (ie. file-based) exporter, added a "cache" call to the Raindrop class to return a URL to the cached/permanent pdf/file documents on S3. While the call ostensibly works, the returned URL's don't work against S3 ("item not found"). Thus, use AT YOUR OWN RISK (and let me know if you *do* get a successful use of it! ;-)
+
+- SECURITY: Addressed vulnerabilities in idna and dnspython.
 
 ### 0.2.2 - 2024-01-18
 
@@ -185,7 +189,7 @@ The project is licensed under the MIT License.
 
 - FIXED: Addressed error in README.md (ht to @superkeyor in [issue #7](https://github.com/PBorocz/raindrop-io-py/issues/7).
 - CHANGED: `SystemCollections.get_status` has been renamed to `SystemCollections.get_counts` to more accurately reflect that it only returns the counts of Raindrops in the 3 SystemCollections only.
-- ADDED: `SystemCollections.get_meta` to return the current "state" of your environment, in particular: the date-time associated with the last Raindrop change; if your account is Pro level also the number of "broken" and/or "duplicated" Raindrops in your account. 
+- ADDED: `SystemCollections.get_meta` to return the current "state" of your environment, in particular: the date-time associated with the last Raindrop change; if your account is Pro level also the number of "broken" and/or "duplicated" Raindrops in your account.
 - ADDED: Reduced CLI startup time as CLI now keeps cached lists of Collections and Tags in conventional (but platform-specific) application state directory. If no changes to the Raindrop environment have occurred since last invocation (determined by the `get_meta` method above), previous state will be used.
 - SECURITY: Addressed `gitpython` vulnerabilities (CVE-2023-40590 and CVE-2023-41040). The former is primarily a Windows issue but `gitpython` is only used in the poetry _dev_ group for release support.
 - SECURITY: Addressed `urllib3` vulnerability (CVE-2023-43804) inherited from requests library. Similar to above, this is also only used in poetry _dev_ group for release support (thus, will attempt to segregate a bit more strongly).
@@ -290,6 +294,6 @@ from raindroiopy.api import API
 - FIXED: Sample file upload specification in `examples/create_raindrop_file.py` is now correct.
 
 .. |docs| image:: https://readthedocs.org/projects/docs/badge/?version=latest
-    :alt: Documentation Status
-    :scale: 100%
-    :target: https://docs.readthedocs.io/en/latest/?badge=latest
+	:alt: Documentation Status
+	:scale: 100%
+	:target: https://docs.readthedocs.io/en/latest/?badge=latest
