@@ -161,6 +161,8 @@ The project is licensed under the MIT License.
 
 ### Unreleased
 
+- SECURITY: Addressed vulnerability in Jinja2.
+
 ### 0.2.3 - 2024-04-12
 
 - INTERNAL: In an attempt create a full (ie. file-based) exporter, added a "cache" call to the Raindrop class to return a URL to the cached/permanent pdf/file documents on S3. While the call ostensibly works, the returned URL's don't work against S3 ("item not found"). Thus, use AT YOUR OWN RISK (and let me know if you *do* get a successful use of it! ;-)
