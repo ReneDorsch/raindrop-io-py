@@ -4,7 +4,7 @@
 
 [tool.poetry]
 name = "raindrop-io-py"
-version = "0.2.3"
+version = "0.2.4"
 description = "API for Raindrop.io bookmark manager"
 authors = ["Peter Borocz <peter.borocz+raindrop-io-py@google.com>"]
 classifiers = ['License :: OSI Approved :: MIT License', 'Programming Language :: Python :: 3']
@@ -55,7 +55,7 @@ sphinx-autobuild = "^2021.3.14"
 [tool.ruff]
 target-version = "py311"
 line-length = 120
-select = [
+lint.select = [
 	   # Which Ruff suites are we running?
 	   # (presented in order from the Ruff documentation page)
 	   "F",                          # Pyflakes
@@ -93,7 +93,7 @@ select = [
 	   "COM",                        # flake8-commas
 	   "RUF",                        # Ruff-specific rules
 	   ]
-ignore = [
+lint.ignore = [
   "D213",
   "E402",
   "I001",
@@ -102,12 +102,12 @@ ignore = [
   "COM812",  # OBO of ruff format but not sure where this is an issue.
 ]
 
-[tool.ruff.pydocstyle]
+[tool.ruff.lint.pydocstyle]
 # For more info, see:
 # https://github.com/charliermarsh/ruff#does-ruff-support-numpy--or-google-style-docstrings
 convention = "google"
 
-[tool.ruff.mccabe]
+[tool.ruff.lint.mccabe]
 max-complexity = 13
 
 [tool.vulture]
