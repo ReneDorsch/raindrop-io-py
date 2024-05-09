@@ -1,7 +1,11 @@
 [![version](https://img.shields.io/badge/python-3.10+-green)](https://www.python.org/)
 [![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit)](https://github.com/pre-commit/pre-commit)
 [![license](https://img.shields.io/badge/License-MIT-green.svg)](https://github.com/PBorocz/raindrop-io-py/blob/trunk/LICENSE)
-|docs|
+
+
+# PROJECT STATUS!
+
+As of Spring 2024, I don't use RaindropIO anymore and thus will find it rather difficult to support this project. I'll keep up-to-date on CVE's of underlying packages for the foreseeable future but otherwise, FEEL FREE to fork and if you're interesting in taking ownership of the repo, feel free to contact me! (or open an issue)
 
 # Raindrop-IO-py
 
