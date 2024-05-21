@@ -165,6 +165,8 @@ The project is licensed under the MIT License.
 
 ### Unreleased
 
+- SECURITY: Update `requests` to address potential security vulnerability (CVE-2024-35195).
+
 ### 0.2.4 - 2024-05-07
 
 - SECURITY: Addressed vulnerability in Jinja2.
