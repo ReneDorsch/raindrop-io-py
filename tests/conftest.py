@@ -1,4 +1,5 @@
 """Provide shared test fixtures across *all* test suites."""
+
 import os
 
 import dotenv

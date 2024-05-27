@@ -6,6 +6,7 @@ deliver the services provided by Raindrop.IO as a set of class-based methods on 
 For example, to create a new raindrop, use Raindrop.create_link(...); a collection would be Collection.create(...) etc.
 
 """
+
 from __future__ import annotations
 
 import enum

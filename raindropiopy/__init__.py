@@ -1,4 +1,5 @@
 """Top level project __init__."""
+
 from importlib import metadata
 
 __all__ = (

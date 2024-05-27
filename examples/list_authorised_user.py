@@ -1,4 +1,5 @@
 """List the attributes associated with user of the token provided."""
+
 import os
 import sys
 

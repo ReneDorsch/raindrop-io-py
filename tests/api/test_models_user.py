@@ -1,4 +1,5 @@
 """Test the ability of the API on the User object."""
+
 import datetime
 from unittest.mock import patch
 

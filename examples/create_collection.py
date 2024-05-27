@@ -1,4 +1,5 @@
 """Create a new collection."""
+
 import os
 import sys
 

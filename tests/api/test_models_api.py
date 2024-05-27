@@ -1,4 +1,5 @@
 """Test out the API using a patched requests module."""
+
 import json
 import time
 from unittest.mock import patch

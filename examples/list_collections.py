@@ -1,4 +1,5 @@
 """List all the collections associated with the token from our current environment."""
+
 import os
 import sys
 

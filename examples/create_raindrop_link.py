@@ -1,4 +1,5 @@
 """Create a new link-based Raindrop, defaulting to the Unsorted collection."""
+
 import os
 import sys
 

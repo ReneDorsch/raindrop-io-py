@@ -1,4 +1,5 @@
 """List the title and count of Raindrops in "system" collections, eg. Unsorted, Trash and All."""
+
 import os
 import sys
 

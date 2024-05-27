@@ -1,4 +1,5 @@
 """Create, update and delete a Collection."""
+
 import os
 import sys
 

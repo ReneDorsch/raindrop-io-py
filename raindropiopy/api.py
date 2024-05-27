@@ -3,6 +3,7 @@
 Except for instantiating, methods in this class are **not** intended for direct use, they serve as the underlying HTTPS
 abstraction layer for calls available for the Core Classes, ie. Collection, Raindrop etc.
 """
+
 import datetime
 import enum
 import json

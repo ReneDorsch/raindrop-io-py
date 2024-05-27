@@ -1,4 +1,5 @@
 """Test the only easy method in the Raindrop Tag API."""
+
 from raindropiopy import CollectionRef, Tag
 from tests.api.conftest import vcr
 

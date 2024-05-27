@@ -1,4 +1,5 @@
 """Edit an existing Raindrop."""
+
 import os
 import sys
 

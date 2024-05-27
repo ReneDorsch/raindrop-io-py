@@ -1,4 +1,5 @@
 """Test all the core methods of the Raindrop API."""
+
 import datetime
 from pathlib import Path
 from unittest.mock import patch

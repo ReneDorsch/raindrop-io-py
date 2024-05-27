@@ -1,4 +1,5 @@
 """Test the Tag API."""
+
 from unittest.mock import patch
 
 from raindropiopy import API, Tag

@@ -1,4 +1,5 @@
 """Create a new file-based Raindrop into the Unsorted collection."""
+
 import os
 import sys
 from pathlib import Path

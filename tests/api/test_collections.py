@@ -1,4 +1,5 @@
 """Test all the methods in the Raindrop Collection API."""
+
 import pytest
 from getpass import getuser
 

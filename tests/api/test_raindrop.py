@@ -1,4 +1,5 @@
 """Test all the core methods of the Raindrop API."""
+
 from pathlib import Path
 
 import pytest

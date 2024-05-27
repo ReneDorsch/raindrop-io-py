@@ -1,4 +1,5 @@
 """Example to show how to search across the Raindrop environment."""
+
 import os
 import sys
 from time import sleep

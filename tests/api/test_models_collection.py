@@ -1,4 +1,5 @@
 """Test all the methods in the Raindrop Collection API."""
+
 import datetime
 import json
 from unittest.mock import patch, Mock
