@@ -81,7 +81,7 @@ or a wrapper script is available to run all of them, in logical order with a sma
 
 Here are a few examples of API usage. Note that I don't have testing for the examples below (yet), but the examples folder helps significantly as it runs against your *live* Raindrop environment.
 
-#### Display All Collections and **Unsorted** Bookmarks:
+#### Display All Collections and Unsorted Bookmarks
 
 This example shows the intended usage of the API as a context-manager, from which any number of calls can be made:
 
@@ -96,11 +96,11 @@ load_dotenv()
 
 with API(os.environ["RAINDROP_TOKEN"]) as api:
 
-	print("Current Collections:"
+	print("Current Collections:")
 	for collection in Collection.get_collections(api):
 		print(collection.title)
 
-	print("\nUnsorted Raindrop Bookmarks:"
+	print("\nUnsorted Raindrop Bookmarks):")
 	for item in Raindrop.search(api, collection=CollectionRef.Unsorted):
 		print(item.title)
 ```
@@ -157,7 +157,7 @@ We use [Sphinx](https://www.sphinx-doc.org/en/master/index.html) with [Google-st
 
 [python-raindropio](https://github.com/atsuoishimoto/python-raindropio) from [Atsuo Ishimoto](https://github.com/atsuoishimoto).
 
-## License
+## License Foo
 
 The project is licensed under the MIT License.
 
@@ -165,7 +165,10 @@ The project is licensed under the MIT License.
 
 ### Unreleased
 
+### 0.2.5 - 2024-05-26
+
 - SECURITY: Update `requests` to address potential security vulnerability (CVE-2024-35195).
+- FIXED: Fixed minor typo in the [Display All Collections and Unsorted Bookmarks](#display-all-collections-and-unsorted-bookmarks) example above; missing closing parens on `print` statements.
 
 ### 0.2.4 - 2024-05-07
 
@@ -174,15 +177,12 @@ The project is licensed under the MIT License.
 ### 0.2.3 - 2024-04-12
 
 - INTERNAL: In an attempt create a full (ie. file-based) exporter, added a "cache" call to the Raindrop class to return a URL to the cached/permanent pdf/file documents on S3. While the call ostensibly works, the returned URL's don't work against S3 ("item not found"). Thus, use AT YOUR OWN RISK (and let me know if you *do* get a successful use of it! ;-)
-
 - SECURITY: Addressed vulnerabilities in idna and dnspython.
 
 ### 0.2.2 - 2024-01-18
 
 - INTERNAL: Create whitelist obo vulture to one set of method arguments that are used dynamically.
-
 - INTERNAL: Moved from stand-alone manage.yaml to incorporate manage commands directly in pyproject.toml (based on manage's 0.2.0 release). Remove manage from local install (run from pipx instead).
-
 - FIXED: Addressed error in nested Collections, handling case of parent reference as either a dict, an int or None.
 
 ### v0.2.1 - 2023-12-12
@@ -190,14 +190,14 @@ The project is licensed under the MIT License.
 - CHANGED: Continued to remove redundant packages.
 
 ### v0.2.0 - 2023-12-12
-- FIXED: Inability to correctly handle "sub" or child collections. We now correctly unpack 'parent' references on querying child collections...(ht to @limaceous-bushwhacker in [issue #12](https://github.com/PBorocz/raindrop-io-py/issues/12)).
+- FIXED: Inability to correctly handle "sub" or child collections. We now correctly unpack 'parent' references on querying child collections...(ht to [@limaceous-bushwhacker](https://github.com/limaceous-bushwhacker) in [issue #12](https://github.com/PBorocz/raindrop-io-py/issues/12)).
 - FIXED: Bugs in `examples/list_collections.py` and `examples\list_authorised_user.py`) that were using old collection attribute `internal_` instead of renamed `other` (to list the _other_/non-official attributes associated with a Collection).
 - FIXED: False positives from tests associated with collections (noticed after adding test obo sub/child collections). There are a few tests not supported yet so the examples code (which runs against the live Raindrop environment is still valuable).
 - CHANGED: Split the command-line portion of the library into a completely separate project. This reduces the size and complexity of the install for this package, allowing it to focus solely on the API interaction with Raindrop and allowing me to experiment more freely with different approaches to a command-line interface. If anyone WAS relying upon the CLI itself (hopefully not heavily), please let me know and I'll expedite the creation of the stand-alone CLI project/package.
 
 ### v0.1.8 - 2023-10-03
 
-- FIXED: Addressed error in README.md (ht to @superkeyor in [issue #7](https://github.com/PBorocz/raindrop-io-py/issues/7).
+- FIXED: Addressed error in README.md (ht to [@superkeyor](https://github.com/superkeyor) in [issue #7](https://github.com/PBorocz/raindrop-io-py/issues/7)).
 - CHANGED: `SystemCollections.get_status` has been renamed to `SystemCollections.get_counts` to more accurately reflect that it only returns the counts of Raindrops in the 3 SystemCollections only.
 - ADDED: `SystemCollections.get_meta` to return the current "state" of your environment, in particular: the date-time associated with the last Raindrop change; if your account is Pro level also the number of "broken" and/or "duplicated" Raindrops in your account.
 - ADDED: Reduced CLI startup time as CLI now keeps cached lists of Collections and Tags in conventional (but platform-specific) application state directory. If no changes to the Raindrop environment have occurred since last invocation (determined by the `get_meta` method above), previous state will be used.
