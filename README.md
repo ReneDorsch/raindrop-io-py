@@ -165,8 +165,6 @@ The project is licensed under the MIT License.
 
 ### Unreleased
 
-### 0.2.5 - 2024-05-26
-
 - SECURITY: Update `requests` to address potential security vulnerability (CVE-2024-35195).
 - FIXED: Fixed minor typo in the [Display All Collections and Unsorted Bookmarks](#display-all-collections-and-unsorted-bookmarks) example above; missing closing parens on `print` statements.
 
