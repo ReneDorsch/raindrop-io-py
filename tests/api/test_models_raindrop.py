@@ -46,7 +46,7 @@ def test_get() -> None:
             0,
             0,
             0,
-            tzinfo=datetime.UTC,
+            tzinfo=datetime.timezone.utc,
         )
         assert c.domain == "www.example.com"
         assert c.excerpt == "excerpt text"
@@ -57,7 +57,7 @@ def test_get() -> None:
             1,
             1,
             1,
-            tzinfo=datetime.UTC,
+            tzinfo=datetime.timezone.utc,
         )
         assert c.link == "https://www.example.com/"
         assert c.media == []

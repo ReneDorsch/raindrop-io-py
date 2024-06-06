@@ -80,7 +80,7 @@ def test_get_root_collections(mock_api) -> None:
             0,
             0,
             0,
-            tzinfo=datetime.UTC,
+            tzinfo=datetime.timezone.utc,
         )
         assert collection.expanded is False
         assert collection.last_update == datetime.datetime(
@@ -90,7 +90,7 @@ def test_get_root_collections(mock_api) -> None:
             0,
             0,
             0,
-            tzinfo=datetime.UTC,
+            tzinfo=datetime.timezone.utc,
         )
         assert collection.parent is None  # This IS the parent collection, thus, it has no parent itself!
         assert collection.public is False
