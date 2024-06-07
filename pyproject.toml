@@ -4,7 +4,7 @@
 
 [tool.poetry]
 name = "raindrop-io-py"
-version = "0.2.5"
+version = "0.3.0"
 description = "API for Raindrop.io bookmark manager"
 authors = ["Peter Borocz <peter.borocz+raindrop-io-py@google.com>"]
 classifiers = ['License :: OSI Approved :: MIT License', 'Programming Language :: Python :: 3']
@@ -181,7 +181,7 @@ shell = "poetry version $bump_level"
 [[tool.poe.tasks._poetry_version.args]]
   name    = "bump_level"
   help    = "The semantic version to push new version to, eg. patch, minor, major etc."
-  default = "patch"
+  default = "minor"
 
 [tool.poe.tasks._git_create_tag]
 interpreter = "fish"

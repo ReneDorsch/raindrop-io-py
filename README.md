@@ -2,7 +2,6 @@
 [![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit)](https://github.com/pre-commit/pre-commit)
 [![license](https://img.shields.io/badge/License-MIT-green.svg)](https://github.com/PBorocz/raindrop-io-py/blob/trunk/LICENSE)
 
-
 # PROJECT STATUS!
 
 As of Spring 2024, I don't use RaindropIO anymore and thus will find it rather difficult to support this project. I'll keep up-to-date on CVE's of underlying packages for the foreseeable future but otherwise, FEEL FREE to fork and if you're interesting in taking ownership of the repo, feel free to contact me! (or open an issue)
@@ -164,6 +163,10 @@ The project is licensed under the MIT License.
 ## Release History
 
 ### Unreleased
+
+### 0.3.0 - 2024-06-07
+
+- FIXED: Reverted use of 1 py3.11+ construct to support 3.10 now. Changed minimum python version in pyproject.toml to match (ie. ">=3.10,<4.0"). Added new deployment of [Nox](https://nox.thea.codes) to support cross version testing. TTBOMK, this release "should" work against 3.10, 3.11 and 3.12 however this is the first time I've tried to support previous versions in a PyPI package so feel free to let me know if I've missing anything!
 
 ### 0.2.5 - 2024-05-26
 
