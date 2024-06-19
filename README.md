@@ -164,6 +164,10 @@ The project is licensed under the MIT License.
 
 ### Unreleased
 
+- SECURITY: Update `urllib3` based on CVE-2024-37891 (moderate).
+
+- SECURITY: Update `tornado` (used by `sphinx-autobuild`). Used opportunity to update several minor packages as well.
+
 ### 0.3.0 - 2024-06-07
 
 - FIXED: Reverted use of 1 py3.11+ construct to support 3.10 now. Changed minimum python version in pyproject.toml to match (ie. ">=3.10,<4.0"). Added new deployment of [Nox](https://nox.thea.codes) to support cross version testing. TTBOMK, this release "should" work against 3.10, 3.11 and 3.12 however this is the first time I've tried to support previous versions in a PyPI package so feel free to let me know if I've missing anything!
