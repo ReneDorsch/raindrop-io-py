@@ -164,6 +164,8 @@ The project is licensed under the MIT License.
 
 ### Unreleased
 
+### 0.4.0 - 2024-06-19
+
 - SECURITY: Update `urllib3` based on CVE-2024-37891 (moderate).
 
 - SECURITY: Update `tornado` (used by `sphinx-autobuild`). Used opportunity to update several minor packages as well.
