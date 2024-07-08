@@ -181,7 +181,7 @@ shell = "poetry version $bump_level"
 [[tool.poe.tasks._poetry_version.args]]
   name    = "bump_level"
   help    = "The semantic version to push new version to, eg. patch, minor, major etc."
-  default = "minor"
+  default = "patch"
 
 [tool.poe.tasks._git_create_tag]
 interpreter = "fish"
