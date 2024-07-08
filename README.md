@@ -164,6 +164,10 @@ The project is licensed under the MIT License.
 
 ### Unreleased
 
+### 0.4.1 - 2024-07-07
+
+- SECURITY: Update `certifi3` based on CVE-2024-39689 (remove "GLOBALTRUST" as cert verifier).
+
 ### 0.4.0 - 2024-06-19
 
 - SECURITY: Update `urllib3` based on CVE-2024-37891 (moderate).
