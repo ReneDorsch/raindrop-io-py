@@ -27,7 +27,7 @@ email-validator = "^2.1.0"
 pre-commit = "^2.21.0"
 requests = "^2.28.2"
 vcrpy = "^4.2.1"
-fawltydeps = "^0.13.3"
+fawltydeps = "^0.17.0"
 pytest = "^7.4.3"
 
 [tool.poetry.group.docs.dependencies]
