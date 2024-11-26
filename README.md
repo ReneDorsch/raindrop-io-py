@@ -164,6 +164,8 @@ The project is licensed under the MIT License.
 
 ### Unreleased
 
+- SECURITY: Update `tornado` based on CVE-2024-52804 (HTTP cookie parsing DoS vulnerability)
+
 ### 0.4.1 - 2024-07-07
 
 - SECURITY: Update `certifi3` based on CVE-2024-39689 (remove "GLOBALTRUST" as cert verifier).
@@ -292,7 +294,7 @@ The project is licensed under the MIT License.
 
 ```python
 from raindropiopy import version
-print(version())
+ppprint(version())
 ```
 
 ### v0.0.7 - 2023-01-25
