@@ -164,6 +164,8 @@ The project is licensed under the MIT License.
 
 ### Unreleased
 
+### 0.4.2 - 2024-11-26
+
 - SECURITY: Update `tornado` based on CVE-2024-52804 (HTTP cookie parsing DoS vulnerability)
 
 ### 0.4.1 - 2024-07-07
