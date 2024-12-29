@@ -645,6 +645,7 @@ class Raindrop(BaseModel):
     broken: bool | None
     cache: Cache | None
     important: bool | None  # aka marked as Favorite.
+    note: str | None
 
     # Per API Doc: "Our API response could contain other fields, not described above.
     # It's unsafe to use them in your integration! They could be removed or renamed at any time."
@@ -835,6 +836,7 @@ class Raindrop(BaseModel):
         please_parse: bool | None = False,
         tags: list[str] | None = None,
         title: str | None = None,
+        note: str | None = None
     ) -> Raindrop:
         """Update an existing Raindrop bookmark, setting any of the attribute values provided.
 
@@ -865,6 +867,8 @@ class Raindrop(BaseModel):
 
             title: Optional, New title for this Raindrop.
 
+            note: Optional, New note, max length: 10000
+
         Returns:
             ``Raindrop`` instance that was updated.
         """
@@ -883,6 +887,7 @@ class Raindrop(BaseModel):
             "order",
             "tags",
             "title",
+            "note",
         ]:
             if (value := locals().get(attr)) is not None:
                 args[attr] = value
